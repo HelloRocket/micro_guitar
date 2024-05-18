@@ -11,6 +11,6 @@ basic.showIcon(IconNames.Rabbit)
 Volume = 127
 music.setVolume(Volume)
 basic.forever(function () {
-    music.setTempo(Math.map(Math.abs(input.acceleration(Dimension.Y)), 0, 1023, 60, 320))
+    music.setTempo(Math.map(Math.abs(1023 - input.acceleration(Dimension.X)), 0, 1023, 60, 320))
     music.play(music.tonePlayable(input.lightLevel() * 25, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
 })
